@@ -1,0 +1,32 @@
+package exercicio;
+
+import java.util.Scanner;
+
+public class VerificarEstoque {
+	
+	public static void estoque(String[] args) {
+		
+		Scanner ProdutoProduto  = new Scanner (System.in);
+		
+		Produto produto = new Produto();
+		
+		System.out.println("==Verifique o estoque dos seus produtos aqui==");
+		
+		System.out.println("Digite o nome -> ");
+	
+		produto.nome = ProdutoProduto.nextLine();	
+		
+		System.out.println("Digite a quantidade -> ");
+		
+		produto.quantidade = ProdutoProduto.nextInt();
+		
+		if (produto.quantidade > 0) {
+			System.out.println("Pode comprar a vontade!");
+			
+		} else {
+			System.out.println("Produto indisponível!");
+		}
+		
+		
+	}
+}
