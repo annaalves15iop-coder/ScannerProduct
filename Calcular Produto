@@ -1,0 +1,36 @@
+package exercicio;
+
+import java.util.Scanner;
+
+public class CalcularProduto {
+
+	public static void calculadora(String[] args) {
+		
+		try (Scanner entradaProduto = new Scanner (System.in)) {
+			System.out.println("Calcular Produto");
+			
+			Produto produto = new Produto();	
+			
+			System.out.println("Nome do produto  -> ");
+			
+			produto.nome = entradaProduto.nextLine();
+			
+			System.out.println("Preco -> ");
+			
+			produto.preco = entradaProduto.nextDouble();
+
+			System.out.println("Digite a quantidade -> ");
+			
+			produto.quantidade = entradaProduto.nextInt();
+			
+			produto.todorapa = produto.preco * produto.quantidade;
+			
+			System.out.println("Produto chamado -> " + produto.nome);
+			System.out.println("O preco do produto é -> " + produto.preco);
+			System.out.println("A quantidade de produtos e -> " + produto.quantidade);
+			System.out.println("Valor total -> " + produto.todorapa);
+		}
+
+	}
+
+}
