@@ -1,0 +1,34 @@
+  package exercicio;
+  
+  import java.util.Scanner;
+  
+  public class NovoProduto {
+  	
+  	public static void novoProduto(Produto produto2) {
+  		
+  		Scanner entradaCalvicie = new Scanner (System.in);
+  		
+  		System.out.println("===Lojao da Yazz===");
+  		
+  		Produto produto = new Produto();	
+  		
+  		System.out.println("Digite o nome -> ");
+  		
+  		produto.nome = entradaCalvicie.nextLine();
+  		
+  		System.out.println("Preco -> ");
+  		
+  		produto.preco = entradaCalvicie.nextDouble();
+  
+  		System.out.println("Digite a quantidade -> ");
+  		
+  		produto.quantidade = entradaCalvicie.nextInt();
+  		
+  		produto.todorapa = produto.preco * produto.quantidade;
+  		
+  		System.out.println("Produto cadastrado!");
+  		
+  		NovoProduto.novoProduto(produto);
+  	}
+
+}
