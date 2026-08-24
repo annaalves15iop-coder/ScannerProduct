@@ -1,0 +1,127 @@
+//Define o pacote onde nossa classe está localizada
+package exercicio;
+
+//Importa o Scanner para receber dados pelo teclado
+import java.util.Scanner;
+
+//Cria a classe MenuLoja
+public class menuLoja {
+
+ // Método principal
+ // A execução do programa começa aqui
+ public static void main(String[] args) {
+
+     // Cria o Scanner para receber informações pelo teclado
+     Scanner entrada = new Scanner(System.in);
+
+     // Cria um objeto da classe Produto
+     Produto produto = new Produto();
+
+     // A variável opcao guarda a escolha feita pelo usuário
+     // Começamos com -1 para garantir que o menu seja executado
+     int opcao = -1;
+
+     // WHILE significa "enquanto"
+     // Enquanto a opção for diferente de 0,
+     // o programa continuará mostrando o menu
+     while (opcao != 0) {
+
+         // Exibe o menu
+         System.out.println("\n=== SISTEMA DA LOJA ===");
+         System.out.println("1 - Cadastrar produto");
+         System.out.println("2 - Consultar produto");
+         System.out.println("3 - Verificar estoque");
+         System.out.println("0 - Sair");
+
+         // Solicita uma opção
+         System.out.print("Escolha uma opção: ");
+
+         // Guarda a opção digitada
+         opcao = entrada.nextInt();
+
+         // Limpa a quebra de linha deixada pelo nextInt()
+         entrada.nextLine();
+
+         // SWITCH verifica qual opção foi escolhida
+         switch (opcao) {
+
+             // Se o usuário escolher 1
+             case 1:
+
+                 System.out.println("\n=== CADASTRO ===");
+
+                 // Solicita o nome
+                 System.out.print("Nome do produto: ");
+                 produto.nome = entrada.nextLine();
+
+                 // Solicita o preço
+                 System.out.print("Preço: R$ ");
+                 produto.preco = entrada.nextDouble();
+
+                 // Solicita a quantidade
+                 System.out.print("Quantidade: ");
+                 produto.quantidade = entrada.nextInt();
+
+                 // Informa que o cadastro foi realizado
+                 System.out.println("Produto cadastrado!");
+
+                 // Encerra este case
+                 break;
+
+             // Se o usuário escolher 2
+             case 2:
+
+                 System.out.println("\n=== PRODUTO ===");
+
+                 // Mostra os dados armazenados no objeto
+                 System.out.println("Nome: " + produto.nome);
+                 System.out.println("Preço: R$ " + produto.preco);
+                 System.out.println("Quantidade: " + produto.quantidade);
+
+                 break;
+
+             // Se o usuário escolher 3
+             case 3:
+
+                 System.out.println("\n=== SITUAÇÃO DO ESTOQUE ===");
+
+                 // IF verifica a primeira condição
+                 // Se houver 20 unidades ou mais
+                 if (produto.quantidade >= 20) {
+
+                     System.out.println("Estoque suficiente.");
+
+                 // ELSE IF verifica outra condição
+                 // Será executado quando houver entre 1 e 19 unidades
+                 } else if (produto.quantidade > 0) {
+
+                     System.out.println("Estoque baixo.");
+
+                 // ELSE será executado quando
+                 // nenhuma condição anterior for verdadeira
+                 } else {
+
+                     System.out.println("Produto sem estoque.");
+                 }
+
+                 break;
+
+             // Se o usuário escolher 0
+             case 0:
+
+                 System.out.println("\nSistema encerrado.");
+
+                 break;
+
+             // DEFAULT será executado quando nenhuma
+             // das opções anteriores for encontrada
+             default:
+
+                 System.out.println("\nOpção inválida!");
+         }
+     }
+
+     // Fecha o Scanner depois que o while terminar
+     entrada.close();
+ }
+}
