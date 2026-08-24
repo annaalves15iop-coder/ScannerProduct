@@ -1,0 +1,41 @@
+package exercicio;
+
+import java.util.Scanner;
+
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner (System.in);
+		
+		 exercicio.Produto produto = new Produto();
+		 
+		 System.out.println ("=== CADASTRO DE PRODUTO ===");
+		 
+		 System.out.print(" Nome do produto: ");
+		 
+		 produto.nome = entrada.nextLine();
+		 
+		 System.out.print("Preço do produto: ");
+		 
+		 produto.preco = entrada.nextDouble();
+		 
+		 System.out.print(" Quantidade: ");
+		 
+		 produto.quantidade = entrada.nextInt();
+		 
+		 System.out.println("\n== PRODUTO CADASTRADO==");
+		 
+		 System.out.println("Preço: R$" + produto.preco);
+		 
+		System.out.println(" Quantidade" + produto.quantidade);
+		 
+		 double ValorTotal = produto.preco * produto.quantidade;
+		 
+		 System.out.println("Valor total em estoque: R$ "+ ValorTotal);
+		 entrada.close();
+
+	}
+
+}
+
